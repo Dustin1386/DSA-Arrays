@@ -8,10 +8,13 @@ function main(){
     let arr = new Array();
 
     // Add an item to the array
-    arr.push(3);
-    arr.push(5);
+    arr.push('tauhida')
 
-    console.log(arr);
+    //remove an item from an array
+    
+
+
+    console.log(arr.get(0));
 }
 
 main();
