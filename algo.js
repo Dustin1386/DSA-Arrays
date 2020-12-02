@@ -17,3 +17,13 @@ remove ([55,5,3,2])
 
 // Max sum in the array
 
+function highestSum(num){
+    highestSum = 0
+    currentSum = 0
+    for(let i  of numbers){
+        currentSum = Math.max(0,currentSum +i);
+        highestSum = Math.max(highestSum, currentSum);
+
+    }
+}
+
