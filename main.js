@@ -13,6 +13,10 @@ function main(){
     //remove an item from an array
     
 
+    //url a string
+
+    
+
 
     console.log(arr.get(0));
 }
