@@ -38,7 +38,7 @@ function highestSum(num){
 function remove(string, charRemove){
     newString = "dfsd"
     for(let i = 0; i < string.length; i++){
-        if(string[] === charRemove) {
+        if(string[i] === charRemove) {
           newString = string.splice(0,charRemove)
           return newString
         }

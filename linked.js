@@ -61,4 +61,26 @@ class LinkedList {
         }
         previousNode.next = currNode.next
     }
+    displayList(){
+        if(!this.head){
+            return;
+        }
+        let node = this.head;
+        while(node){
+            str += node.data + "";
+            node = node.next
+        }
+        return str;
+    }
 }
+
+function main(){
+  let STLL = new LinkedList('SLL')
+  let valuesToAdd = ['Apalo']
+  valuesToAdd.forEach((value)=>{
+      STLL.insertFirst(value)
+
+  })
+}
+
+
