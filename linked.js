@@ -97,6 +97,16 @@ class _Node {
         currNode = currNode.next;
       }
     }
+
+    insertAt(newItem,selectItem) {
+        let currNode = this.head;
+
+        while(currNode !== null){
+            if(currNode.value === selectItem){
+                currNode.value = new _Node(newItem, currNode.next)
+            }
+        }
+    }
     displayList() {
       if (!this.head) {
         return;
