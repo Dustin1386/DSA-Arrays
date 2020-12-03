@@ -27,3 +27,26 @@ function highestSum(num){
     }
 }
 
+//concat arrays
+//  function sortArr (arr1,arr2){
+//     let newArr = arr1.concat(arr2);
+//    console.log(newArr.sort((a,b)=> a-b)) 
+//  }
+// sortArr([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10])
+
+
+function remove(string, charRemove){
+    newString = "dfsd"
+    for(let i = 0; i < string.length; i++){
+        if(string[] === charRemove) {
+          newString = string.splice(0,charRemove)
+          return newString
+        }
+        else{
+            return "ldd"
+        }
+    }console.log(newString)
+    
+}
+
+remove("hello",'el')
