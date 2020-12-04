@@ -6,34 +6,34 @@
 //     }
 // }
 
-// class Stack {
-//     constructor() {
-//         this.top = null; 
-//     }
-//     push(data){
-//         // if the stack is empty then the node will be the top of the stack
-//         if(this.top === null){
-//             this.top = new _Node(data, null);
-//             return this.top
-//         }
-//         /* If the stack already has something, 
-//            then create a new node,
-//            add data to the new node, and
-//            have the pointer point to the top */
-//         const node = new _Node(data, this.top)
-//     }
+class Stack {
+    constructor() {
+        this.top = null; 
+    }
+    push(data){
+        // if the stack is empty then the node will be the top of the stack
+        if(this.top === null){
+            this.top = new _Node(data, null);
+            return this.top
+        }
+        /* If the stack already has something, 
+           then create a new node,
+           add data to the new node, and
+           have the pointer point to the top */
+        const node = new _Node(data, this.top)
+    }
 
-//     pop(data){
-//          /* In order to remove the top of the stack, you have to point
-//            the pointer to the next item and that next item becomes the
-//            top of the stack */
-//            const node = this.top;
-//            this.top = node.next;
-//            return node.data
+    pop(data){
+         /* In order to remove the top of the stack, you have to point
+           the pointer to the next item and that next item becomes the
+           top of the stack */
+           const node = this.top;
+           this.top = node.next;
+           return node.data
 
-//     }
+    }
 
-// }
+}
 
 // function sortStack(stackA){
 //     let stackB = new Stack();
@@ -82,10 +82,10 @@
 // Creates a node containing the data and a reference to the next item
 
 class _Node {
-    constructor(value,next,previous){
+    constructor(value){
         this.value = value;
-        this.next = next;
-        this.previous = previous;
+        this.next = null;
+        
     }
 }
 
@@ -93,12 +93,11 @@ class Queue {
     constructor(){
         this.first = null;
         this.last = null;
-        this.head = null;
-        this.tail = null;
+
 
     }
     enqueue(data){
-        const node = new _Node(data,this.head,this.tail);
+        const node = new _Node(data);
 
         if(this.first === null){
             this.first = node;
@@ -123,6 +122,24 @@ class Queue {
 
     }
 }
+class Queue2 {
+    constructor(){
+        this.stackA = [];
+        this.stackB = [];
+    }
+    enqueue(value){
+        for(let i = 0; i<this.stackB.length;i++){
+            this.stackA.push(this.stackB.pop())
+        }
+        this.stackA.push(value)
+    }
+    dequeue(){
+        while(this.stackA.length > 0){
+            this.stackB.push(stackA.pop())
+        }
+        return this.stackB.pop();
+    }
+}
 
 
 let starTreckQ = new Queue();
@@ -136,11 +153,16 @@ initialArray.forEach((char)=>{
 const display = (queue) =>{
     let node = queue.first
     while(node !== null){
-        console.log(node.value)
+        console.log(node)
         node = node.next
     }
    
 }
+
+const display2 = (queue)=>{
+    console.log(JSON.stringify(queue.stackA,null,4))
+}
+
 display(starTreckQ)
 
 // remove spock
@@ -150,6 +172,30 @@ starTreckQ.enqueue("Kirk")
 
 
 display(starTreckQ)
+
+let starTrek1 = new Stack();
+let arrayOfNames = ['Kirk', 'Spock', 'McCoy', 'Scotty']
+arrayOfNames.forEach((name)=>{
+    starTrek1.push(name);
+});
+
+let starTrek2 = new Stack();
+arrayOfNames.forEach((name)=>{
+    starTrek2.push(name);
+});
+
+let starQueue = new Queue2()
+const newQueue = (stackA,stackB) =>{
+    starQueue.enqueue(stackA)
+    starQueue.enqueue(stackB)
+
+}
+newQueue(starTrek1,starTrek2)
+display2(starQueue)
+console.log(starQueue)
+
+
+
 
 
 
