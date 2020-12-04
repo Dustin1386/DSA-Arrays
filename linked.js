@@ -81,6 +81,9 @@ class Node {
     }
 
     //remove at index
+    removeAt(index){
+        if(index)
+    }
 
     //clear list
 
