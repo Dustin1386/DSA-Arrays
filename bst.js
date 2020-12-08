@@ -409,3 +409,32 @@ class Node {
 
 main()
 sort()
+
+const isBST = (node, min = null, max = null) => {
+    if(!node){
+        return true
+    }
+    if(max !== null && node.key >= max){
+    return false
+    }
+    if(min !== null && node.key <= min){
+        return false
+    }
+    const leftSide = isBST(node.left, min, node.key);
+    const rightSide = isBST(node.right, node.value, max)
+    return leftSide && rightSide;
+}
+console.log(isBST(bst))
+
+const thirdLargest = (tree, c = 0) =>{
+   if(!tree){
+       return false
+   }
+   c++;
+   if(c === 3){
+       console.log('found', tree.key)
+   }
+   thirdLargest(tree.right,c);
+
+}
+thirdLargest(bst)
